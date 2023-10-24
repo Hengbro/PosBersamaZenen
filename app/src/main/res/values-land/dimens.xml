@@ -1,0 +1,55 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="textCaption1">@dimen/_6ssp</dimen>
+    <dimen name="textCaption2">@dimen/_5ssp</dimen>
+    <dimen name="textCaption3">@dimen/_4ssp</dimen>
+    <dimen name="textCaption4">@dimen/_3ssp</dimen>
+    <dimen name="textBody3">@dimen/_7ssp</dimen>
+    <dimen name="textBody2">@dimen/_8ssp</dimen>
+    <dimen name="textBody1">@dimen/_10ssp</dimen>
+    <dimen name="textHeading1">@dimen/_16ssp</dimen>
+    <dimen name="textHeading2">@dimen/_14ssp</dimen>
+    <dimen name="textHeading3">@dimen/_12ssp</dimen>
+    <dimen name="textHeading4">@dimen/_10ssp</dimen>
+    <dimen name="textHeading5">@dimen/_8ssp</dimen>
+    <dimen name="textHeading6">@dimen/_6ssp</dimen>
+
+    <dimen name="bottomNavIconSize">@dimen/_9sdp</dimen>
+
+    <dimen name="buttonImage">@dimen/_18sdp</dimen>
+    <dimen name="buttonImagePadding">@dimen/_3sdp</dimen>
+    <dimen name="imageNormal">@dimen/_11sdp</dimen>
+    
+    <dimen name="small_height">@dimen/_20sdp</dimen>
+    <dimen name="normal_height">@dimen/_23sdp</dimen>
+    <dimen name="medium_height">@dimen/_28sdp</dimen>
+    <dimen name="large_height">@dimen/_32sdp</dimen>
+    <dimen name="extra_height">@dimen/_45sdp</dimen>
+
+    <dimen name="cornerRadiusSmallHigh">@dimen/_10sdp</dimen>
+    <dimen name="cornerRadiusSmall">@dimen/_2sdp</dimen>
+    <dimen name="cornerRadiusNormal">@dimen/_4sdp</dimen>
+    <dimen name="cornerRadiusMedium">@dimen/_5sdp</dimen>
+    <dimen name="cornerRadiusLarge">@dimen/_7sdp</dimen>
+
+    <dimen name="marginTiny">@dimen/_1sdp</dimen>
+    <dimen name="marginSmall">@dimen/_2sdp</dimen>
+    <dimen name="marginBox">@dimen/_5sdp</dimen>
+    <dimen name="marginNormal">@dimen/_6sdp</dimen>
+    <dimen name="marginMedium">@dimen/_11sdp</dimen>
+    <dimen name="marginLarge">@dimen/_15sdp</dimen>
+    <dimen name="marginExtra">@dimen/_25sdp</dimen>
+
+    <dimen name="paddingTiny">@dimen/_1sdp</dimen>
+    <dimen name="paddingSmall">@dimen/_3sdp</dimen>
+    <dimen name="paddingBox">@dimen/_5sdp</dimen>
+    <dimen name="paddingNormal">@dimen/_6sdp</dimen>
+    <dimen name="paddingMedium">@dimen/_11sdp</dimen>
+    <dimen name="paddingLarge">@dimen/_15sdp</dimen>
+
+    <dimen name="percentage">40dp</dimen>
+
+</resources>

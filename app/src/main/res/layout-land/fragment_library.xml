@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_height"
+            android:backgroundTint="@color/gray4"
+            android:paddingVertical="@dimen/paddingNormal"
+            android:paddingHorizontal="@dimen/paddingNormal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/normal_height"
+                android:text="Morning menu"
+                style="@style/Button.Normal"
+                android:layout_margin="@dimen/marginSmall"
+                android:backgroundTint="@color/red"
+                android:textColor="@color/white"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/normal_height"
+                android:text="Evening menu"
+                style="@style/Button.OutlineButton.Primary"
+                android:backgroundTint="@color/red"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/marginNormal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout.Rounded"
+                android:layout_width="match_parent"
+                app:startIconDrawable="@drawable/asset_ic_search_sizeable"
+                android:layout_height="@dimen/medium_height">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    android:gravity="center_vertical"
+                    android:hint="Enter costumer name, phone or email"
+                    android:paddingVertical="@dimen/paddingSmall"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:paddingEnd="@dimen/paddingNormal"
+                    android:textAppearance="@style/textAppearance.Body2"
+                    android:textColor="@color/natural_900"
+                    app:endIconMode="clear_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textColorHint="@color/dark"
+                android:layout_marginTop="@dimen/marginNormal"
+                android:textAppearance="@style/textAppearance.Body2.Bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/marginNormal"
+                android:background="@color/gray4"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/medium_height"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_categories" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Product"
+                android:textColorHint="@color/dark"
+                android:layout_marginTop="@dimen/marginNormal"
+                android:textAppearance="@style/textAppearance.Body2.Bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/marginNormal"
+                android:background="@color/gray4"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/medium_height"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_product" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

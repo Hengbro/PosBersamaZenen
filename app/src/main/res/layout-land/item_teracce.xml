@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/marginSmall"
+        android:background="@color/gray5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terrace 1"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:layout_marginBottom="@dimen/marginExtra"
+            android:layout_marginTop="@dimen/marginExtra"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:textAppearance="@style/textAppearance.Body2"/>
+        
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
