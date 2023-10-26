@@ -3,7 +3,7 @@
     android:id="@+id/layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white">
 
@@ -12,17 +12,27 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_5sdp"
         android:layout_margin="@dimen/marginNormal"
-        android:background="@color/gray5">
+        android:backgroundTint="@color/gray5">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terrace 1"
-            android:layout_marginStart="@dimen/marginMedium"
-            android:layout_marginEnd="@dimen/marginMedium"
-            android:layout_marginTop="@dimen/paddingLarge"
-            android:layout_marginBottom="@dimen/paddingLarge"
-            android:textAppearance="@style/textAppearance.Body2"/>
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:layout_marginBottom="@dimen/marginLarge"
+            android:paddingTop="@dimen/paddingNormal"
+            android:paddingBottom="@dimen/paddingNormal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terrace 1"
+                android:textAppearance="@style/textAppearance.Caption2"/>
+
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

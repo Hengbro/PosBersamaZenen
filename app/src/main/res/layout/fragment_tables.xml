@@ -17,11 +17,10 @@
             android:orientation="vertical"
             android:layout_margin="@dimen/marginNormal">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Categories"
+                android:text="Dinning hall"
                 android:textColorHint="@color/dark"
                 android:layout_marginTop="@dimen/marginNormal"
                 android:textAppearance="@style/textAppearance.Body2.Bold"/>
@@ -56,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product"
+                android:text="Terrace"
                 android:textColorHint="@color/dark"
                 android:layout_marginTop="@dimen/marginNormal"
                 android:textAppearance="@style/textAppearance.Body2.Bold"/>

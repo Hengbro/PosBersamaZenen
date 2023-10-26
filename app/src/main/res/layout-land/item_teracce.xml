@@ -11,19 +11,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_5sdp"
-        android:layout_margin="@dimen/marginSmall"
-        android:background="@color/gray5">
+        android:layout_margin="@dimen/marginNormal"
+        android:backgroundTint="@color/gray5">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terrace 1"
-            android:layout_marginEnd="@dimen/marginLarge"
-            android:layout_marginBottom="@dimen/marginExtra"
-            android:layout_marginTop="@dimen/marginExtra"
+            android:orientation="vertical"
             android:layout_marginStart="@dimen/marginLarge"
-            android:textAppearance="@style/textAppearance.Body2"/>
-        
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:layout_marginBottom="@dimen/marginLarge"
+            android:paddingTop="@dimen/paddingNormal"
+            android:paddingBottom="@dimen/paddingNormal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terrace 1"
+                android:textAppearance="@style/textAppearance.Caption2"/>
+
+
+        </LinearLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_height"
+            android:paddingHorizontal="@dimen/paddingMedium">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_imageclose"
+                android:layout_width="@dimen/buttonImage"
+                android:layout_height="@dimen/buttonImage"
+                android:src="@drawable/asset_ic_close"
+                android:padding="@dimen/buttonImagePadding"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Main menu"
+                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:layout_toEndOf="@+id/btn_imageclose"
+                android:textColor="@color/gray2"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:text="Log out Acount"
+                style="@style/Button.TextButton"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="@dimen/_400sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start selling and take payments"
+                    android:textAppearance="@style/textAppearance.Body2.Bold"
+                    android:textColor="@color/gray3"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    android:paddingHorizontal="@dimen/marginNormal"
+                    android:layout_marginTop="@dimen/marginNormal"
+                    style="@style/Button.OutlineButton.Primary">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_imagepointsale"
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_point_of_sale"
+                        android:padding="@dimen/buttonImagePadding"
+                        android:layout_centerVertical="true"
+                        app:tint="@color/colorPrimary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Point-of-Sale"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginStart="@dimen/marginSmall"
+                        android:textAppearance="@style/textAppearance.Body3.Bold"
+                        android:layout_toEndOf="@+id/btn_imagepointsale"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_right_arrow"
+                        android:padding="@dimen/buttonImagePadding"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        app:tint="@color/colorPrimary"/>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage your business ana location"
+                    android:textAppearance="@style/textAppearance.Body2.Bold"
+                    android:layout_marginTop="@dimen/marginExtra"
+                    android:textColor="@color/gray3"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/medium_height"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                        app:spanCount="2"
+                        tools:itemCount="9"
+                        tools:listitem="@layout/item_menumanage" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

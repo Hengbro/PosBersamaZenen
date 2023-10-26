@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/marginNormal"
         android:backgroundTint="@color/gray5">
 
         <LinearLayout
@@ -23,14 +24,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dining"
-                android:textStyle="bold"
                 android:textAppearance="@style/textAppearance.Body3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="hall"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:textAppearance="@style/textAppearance.Body3"/>
 

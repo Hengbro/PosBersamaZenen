@@ -27,6 +27,7 @@
                 android:layout_gravity="center_vertical">
 
                 <TextView
+                    android:id="@+id/txt_intial"
                     android:background="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,6 +54,7 @@
                     android:textAppearance="@style/textAppearance.Body3.Bold"/>
 
                 <TextView
+                    android:id="@+id/txt_qty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1 product"

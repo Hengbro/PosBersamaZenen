@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_height"
+            android:paddingHorizontal="@dimen/paddingNormal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginStart="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginSmall"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_close"
+                    android:clickable="true"
+                    android:layout_width="@dimen/buttonImage"
+                    android:layout_height="@dimen/buttonImage"
+                    android:src="@drawable/asset_ic_close"
+                    android:padding="@dimen/buttonImagePadding"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customize Navbar"
+                    android:textAppearance="@style/textAppearance.Body2.Bold"
+                    android:layout_marginStart="@dimen/marginNormal"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Button.Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Save changes" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray4"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large_height"
+            android:layout_marginEnd="@dimen/extra_height"
+            android:layout_marginTop="@dimen/medium_height">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/extra_height"
+                android:layout_marginEnd="@dimen/extra_height">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="Rearrange the pages according to your needs. You can also add multiple Favorite pages and rename them to better suit your selling needs"
+                    android:textAppearance="@style/textAppearance.Body3"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:text="Library"
+                    android:textAppearance="@style/textAppearance.Body3"
+                    android:textStyle="bold"
+                    app:iconTint="@color/gray3"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/asset_ic_frame"
+                    android:textColor="@color/dark"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Button.Normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medium_height"
+                        android:backgroundTint="@color/white"
+                        android:gravity="start|center_vertical"
+                        android:text="Favorites"
+                        android:textAppearance="@style/textAppearance.Body3"
+                        android:textColor="@color/dark"
+                        android:textStyle="bold"
+                        app:icon="@drawable/asset_ic_frame"
+                        app:iconGravity="start"
+                        app:iconSize="@dimen/imageNormal"
+                        app:iconTint="@color/gray3" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/buttonImagePadding"
+                        android:src="@drawable/asset_ic_edit"
+                        app:tint="@color/colorPrimary" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/normal_height"
+                    android:layout_marginEnd="@dimen/marginNormal"
+                    android:text="Add new favorites page"
+                    android:textAppearance="@style/textAppearance.Body3.Bold"
+                    app:iconTint="@color/selesaiSoft"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/baseline_add"
+                    android:textColor="@color/selesaiSoft"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:text="Keypad"
+                    android:textAppearance="@style/textAppearance.Body3"
+                    android:textStyle="bold"
+                    app:iconTint="@color/gray3"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/asset_ic_frame"
+                    android:textColor="@color/dark"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"
+                    android:layout_marginStart="@dimen/marginMedium"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:text="Tables"
+                    android:textAppearance="@style/textAppearance.Body3"
+                    android:textStyle="bold"
+                    app:iconTint="@color/gray3"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/asset_ic_frame"
+                    android:textColor="@color/dark"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"
+                    android:layout_marginStart="@dimen/marginMedium"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:text="Bills"
+                    android:textAppearance="@style/textAppearance.Body3"
+                    android:textStyle="bold"
+                    app:iconTint="@color/gray3"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/asset_ic_frame"
+                    android:textColor="@color/dark"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray4"
+                    android:layout_marginStart="@dimen/marginMedium"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginExtra"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete Favorites page?"
+                    android:layout_margin="@dimen/marginNormal"
+                    android:textAppearance="@style/textAppearance.Body2.Bold"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:maxLines="4"
+                    android:textAlignment="center"
+                    android:text="Are you sure to favorites? There are products and/ or categories arranged inside. If you delete the page, the arrangements will be deleted as well. Your Product will be safe and note deleted"
+                    android:textAppearance="@style/textAppearance.Body3.Bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray4"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_height"
+                android:text="Cancel"
+                style="@style/Button.TextButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_height"
+                android:text="Delete favorites page"
+                style="@style/Button.Normal"
+                android:backgroundTint="@color/red"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonImage"
+                android:src="@drawable/asset_ic_close"
+                android:padding="@dimen/buttonImagePadding"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
