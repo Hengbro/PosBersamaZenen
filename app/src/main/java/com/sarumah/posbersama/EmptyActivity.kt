@@ -13,6 +13,5 @@ class EmptyActivity : AppCompatActivity() {
         binding = ActivityEmptyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
     }
 }

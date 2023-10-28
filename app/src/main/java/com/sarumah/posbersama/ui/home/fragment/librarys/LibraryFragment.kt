@@ -6,8 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.inyongtisto.myhelper.extension.intentActivity
+import com.inyongtisto.myhelper.extension.popUpMenu
+import com.sarumah.posbersama.EmptyActivity
 import com.sarumah.posbersama.databinding.FragmentLibraryBinding
-import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.LibrarysAdapter
+import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.CategoryAdapter
+import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.ProductAdapter
+import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity
 
 class LibraryFragment : Fragment() {
 
@@ -15,7 +20,8 @@ class LibraryFragment : Fragment() {
     private lateinit var viewModel: LibrarysViewModel
 
 
-    private val  adapterLibrary = LibrarysAdapter()
+    private val  adapterCategory = CategoryAdapter()
+    private val adapterProduct = ProductAdapter()
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,24 +33,32 @@ class LibraryFragment : Fragment() {
 
         _binding = FragmentLibraryBinding.inflate(inflater, container, false)
 
-
-
         setupAdapter()
         setupDataCategories()
+        setupDataProduct()
+
         return binding.root
     }
 
     private fun setupAdapter(){
         binding.apply {
-            rvCategories.adapter = adapterLibrary
+            rvCategories.adapter = adapterCategory
+            rvProduct.adapter = adapterProduct
         }
     }
 
     private fun setupDataCategories(){
         viewModel.listCategories.observe(requireActivity()) {
-            adapterLibrary.addItems(it)
+            adapterCategory.addItems(it)
         }
     }
+
+    private fun setupDataProduct(){
+        viewModel.listProducts.observe(requireActivity()){
+            adapterProduct.addItems(it)
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

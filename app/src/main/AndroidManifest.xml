@@ -29,6 +29,8 @@
         <activity android:name="com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity" />
         <activity android:name="com.sarumah.posbersama.EmptyActivity" />
         <activity android:name="com.sarumah.posbersama.ui.menu.MenuManageActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.home.orderproduct.OrderProductActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.ProdukInventoryActivity" />
     </application>
 
 </manifest>

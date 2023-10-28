@@ -1,4 +1,4 @@
-package com.sarumah.posbersama.ui.home.fragment.librarys.adapter
+package com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inyongtisto.myhelper.extension.getInitial
 import com.sarumah.posbersama.core.data.source.modal.Categories
+import com.sarumah.posbersama.databinding.ItemAddcategoriesBinding
 import com.sarumah.posbersama.databinding.ItemCategoriesBinding
 
 @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
-class LibrarysAdapter : RecyclerView.Adapter<LibrarysAdapter.ViewHolder>() {
+class CategoryMenuAdapter : RecyclerView.Adapter<CategoryMenuAdapter.ViewHolder>() {
 
     private var data = ArrayList<Categories>()
-    inner class ViewHolder(private val itemBinding: ItemCategoriesBinding): RecyclerView.ViewHolder(itemBinding.root){
+    inner class ViewHolder(private val itemBinding: ItemAddcategoriesBinding): RecyclerView.ViewHolder(itemBinding.root){
 
             fun bind(item : Categories, position: Int){
 
                 itemBinding.apply {
 
                     tvName.text = item.name
-                    txtQty.text = item.qty+"Product"
-                    txtIntial.text = item.name.getInitial()
+                    tvQty.text = item.qty+" Product"
 
                     /*layout.setOnClickListener{
                         onClick.invoke(item)
@@ -41,7 +41,7 @@ class LibrarysAdapter : RecyclerView.Adapter<LibrarysAdapter.ViewHolder>() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ViewHolder(ItemCategoriesBinding.inflate(
+            return ViewHolder(ItemAddcategoriesBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false))

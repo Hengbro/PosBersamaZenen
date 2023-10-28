@@ -305,7 +305,6 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:padding="@dimen/buttonImagePadding"
-
                             android:src="@drawable/baseline_chevron_right" />
 
 

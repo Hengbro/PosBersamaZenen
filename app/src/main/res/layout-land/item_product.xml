@@ -26,16 +26,13 @@
                 android:layout_marginEnd="@dimen/marginNormal"
                 android:layout_gravity="center_vertical">
 
-                <TextView
-                    android:background="@color/colorPrimary"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_product"
+                    android:layout_width="@dimen/_20sdp"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/paddingSmall"
-                    android:gravity="center"
-                    android:text="NP"
-                    android:textAppearance="@style/textAppearance.Body3"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"/>
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/tempat_makan"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -53,6 +50,7 @@
                     android:textAppearance="@style/textAppearance.Body3.Bold"/>
 
                 <TextView
+                    android:id="@+id/txt_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp. 10.000"
@@ -63,11 +61,12 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_menuproduct"
             android:layout_width="@dimen/buttonImage"
             android:layout_height="@dimen/buttonImage"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/asset_ic_right_arrow"
+            android:src="@drawable/asset_ic_kebab_menu"
             android:padding="@dimen/buttonImagePadding"/>
 
     </RelativeLayout>

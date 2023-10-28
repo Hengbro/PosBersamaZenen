@@ -11,7 +11,7 @@ import com.inyongtisto.myhelper.extension.toVisible
 import com.sarumah.posbersama.EmptyActivity
 import com.sarumah.posbersama.R
 import com.sarumah.posbersama.databinding.ActivityHomedashboardBinding
-import com.sarumah.posbersama.ui.home.fragment.BillsFragment
+import com.sarumah.posbersama.ui.home.fragment.bills.BillsFragment
 import com.sarumah.posbersama.ui.home.fragment.FavoriteFragment
 import com.sarumah.posbersama.ui.home.fragment.KeypadFragment
 import com.sarumah.posbersama.ui.home.fragment.librarys.LibraryFragment
@@ -90,7 +90,6 @@ class HomeActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(
-
                 R.id.mainFrame,
                 fragment,
                 fragment.tag

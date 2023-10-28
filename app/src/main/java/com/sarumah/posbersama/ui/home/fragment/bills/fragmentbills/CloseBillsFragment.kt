@@ -1,17 +1,15 @@
-package com.sarumah.posbersama.ui.home.fragment
+package com.sarumah.posbersama.ui.home.fragment.bills.fragmentbills
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.sarumah.posbersama.databinding.FragmentBillsBinding
-import com.sarumah.posbersama.databinding.FragmentFavoritesBinding
-import com.sarumah.posbersama.databinding.FragmentTablesBinding
+import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 
-class BillsFragment : Fragment() {
+class CloseBillsFragment : Fragment() {
 
-    private var _binding: FragmentBillsBinding? = null
+    private var _binding: FragmentEmptyBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,8 +17,7 @@ class BillsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentBillsBinding.inflate(inflater, container, false)
-
+        _binding = FragmentEmptyBinding.inflate(inflater, container, false)
 
         return binding.root
     }
