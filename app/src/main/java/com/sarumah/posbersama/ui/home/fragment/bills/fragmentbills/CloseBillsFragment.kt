@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.sarumah.posbersama.databinding.FragmentClosebillsBinding
 import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 
 class CloseBillsFragment : Fragment() {
 
-    private var _binding: FragmentEmptyBinding? = null
+    private var _binding: FragmentClosebillsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +18,7 @@ class CloseBillsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentEmptyBinding.inflate(inflater, container, false)
+        _binding = FragmentClosebillsBinding.inflate(inflater, container, false)
 
         return binding.root
     }

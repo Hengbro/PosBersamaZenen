@@ -6,6 +6,7 @@ import com.sarumah.posbersama.R
 import com.sarumah.posbersama.core.data.source.modal.Menu
 import com.sarumah.posbersama.core.data.source.modal.Texass
 import com.sarumah.posbersama.core.data.source.modal.Topings
+import com.sarumah.posbersama.core.data.source.modal.VariantOptions
 import com.sarumah.posbersama.core.data.source.modal.Variations
 
 object Dummy {
@@ -35,10 +36,20 @@ object Dummy {
         Variations(id = 6, name = "Large, Extra Sugar", price = 65000),
     )
 
+    val listVariantOptions = listOf(
+        VariantOptions(id = 1, name = "Flavor", type = "Apple, Guava, Blackcurrant"),
+        VariantOptions(id = 2, name = "Size", type = "Small, Medium, Large"),
+        VariantOptions(id = 3, name = "Sugar level", type = "Normal sugar, Extra sugar")
+    )
+
+    val listTopingOptionns = listOf(
+        Topings(name = "Topings", type = "Add Cheese, Add Chocolate,Add Peanuts", qty = "3")
+    )
+
     val listTopings = listOf(
-        Topings(id = 1, name = "Add Cheese", price = 10000),
-        Topings(id = 2, name = "Add Chocolate", price = 50000),
-        Topings(id = 3, name = "Add Peanuts", price = 60000),
+        Topings(id = 1, name = "Add Cheese", type = "Topings", price = 10000),
+        Topings(id = 2, name = "Add Chocolate", type = "Topings", price = 50000),
+        Topings(id = 3, name = "Add Peanuts", type = "Topings", price = 60000),
     )
 
     val listTaxes = listOf(
@@ -57,4 +68,5 @@ object Dummy {
         Menu(id = 9, name ="Help & suport", image = R.drawable.asset_ic_add),
 
     )
+
 }

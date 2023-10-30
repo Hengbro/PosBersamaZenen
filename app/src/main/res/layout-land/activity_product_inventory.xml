@@ -24,7 +24,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/paddingNormal"
                 android:text="Product and Inventory"
-                android:textAppearance="@style/textAppearance.Body1.Bold"
+                android:textAppearance="@style/textAppearance.Body2.Bold"
                 tools:ignore="RtlSymmetry" />
 
             <View
@@ -41,7 +41,7 @@
                 android:paddingVertical="0dp"
                 android:paddingStart="@dimen/paddingNormal"
                 android:text="Product List"
-                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold"
                 android:textColor="@color/white"
                 tools:ignore="RtlSymmetry" />
 
@@ -59,7 +59,7 @@
                 android:paddingVertical="0dp"
                 android:paddingStart="@dimen/paddingNormal"
                 android:text="Variant options"
-                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold"
                 tools:ignore="RtlSymmetry" />
 
             <View
@@ -76,7 +76,7 @@
                 android:paddingVertical="0dp"
                 android:paddingStart="@dimen/paddingNormal"
                 android:text="Modifiers"
-                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold"
                 tools:ignore="RtlSymmetry" />
 
             <View
@@ -93,7 +93,7 @@
                 android:paddingVertical="0dp"
                 android:paddingStart="@dimen/paddingNormal"
                 android:text="Category"
-                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold"
                 tools:ignore="RtlSymmetry" />
 
         </LinearLayout>

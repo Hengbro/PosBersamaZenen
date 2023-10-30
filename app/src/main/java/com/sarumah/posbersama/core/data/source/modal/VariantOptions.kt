@@ -1,10 +1,8 @@
 package com.sarumah.posbersama.core.data.source.modal
 
 
-data class Topings(
+data class VariantOptions(
     val id: Int? = null,
     val name: String? = null,
     val type: String? = null,
-    val qty: String?= null,
-    val price: Int? = null
 )

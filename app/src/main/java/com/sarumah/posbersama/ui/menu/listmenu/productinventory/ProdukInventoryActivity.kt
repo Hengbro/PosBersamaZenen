@@ -21,6 +21,9 @@ import com.sarumah.posbersama.ui.home.fragment.TablesFragment
 import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity
 import com.sarumah.posbersama.ui.menu.MenuManageActivity
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.CategoriesFragment
+import com.sarumah.posbersama.ui.menu.listmenu.productinventory.modifiersoptions.ModifiersOptionsFragment
+import com.sarumah.posbersama.ui.menu.listmenu.productinventory.productlist.ProductListFragment
+import com.sarumah.posbersama.ui.menu.listmenu.productinventory.variantoptions.VariantOptionsFragment
 
 
 class ProdukInventoryActivity : AppCompatActivity() {
@@ -33,23 +36,23 @@ class ProdukInventoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mainButton()
-        callFargment(EmptyFragment())
+        callFargment(ProductListFragment())
     }
 
     private fun mainButton() {
         binding.apply {
             btnProduct.setOnClickListener {
                 setActive(btnProduct)
-                callFargment(EmptyFragment())
+                callFargment(ProductListFragment())
             }
             btnVariant.setOnClickListener {
                 setActive(btnVariant)
-                callFargment(EmptyFragment())
+                callFargment(VariantOptionsFragment())
             }
 
             btnModifiers.setOnClickListener {
                 setActive(btnModifiers)
-                callFargment(EmptyFragment())
+                callFargment(ModifiersOptionsFragment())
             }
 
             btnCategory.setOnClickListener {
