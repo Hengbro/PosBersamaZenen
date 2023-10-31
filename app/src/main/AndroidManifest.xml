@@ -31,6 +31,10 @@
         <activity android:name="com.sarumah.posbersama.ui.menu.MenuManageActivity" />
         <activity android:name="com.sarumah.posbersama.ui.home.orderproduct.OrderProductActivity" />
         <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.ProdukInventoryActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.productlist.AddProductActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.variantoptions.AddVariationActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.AddCategoriesActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.modifiersoptions.AddModifiersActivity" />
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.inyongtisto.myhelper.extension.intentActivity
 import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 import com.sarumah.posbersama.databinding.FragmentModifiersBinding
 import com.sarumah.posbersama.databinding.FragmentVariantBinding
@@ -36,7 +37,11 @@ class VariantOptionsFragment : Fragment() {
     }
 
     private fun mainButton(){
-
+        binding.apply {
+            btnAddnewvariant.setOnClickListener {
+                intentActivity(AddVariationActivity::class.java)
+            }
+        }
     }
 
     private fun setupAdapter(){

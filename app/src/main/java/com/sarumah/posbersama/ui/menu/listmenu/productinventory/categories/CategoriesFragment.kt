@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.inyongtisto.myhelper.extension.intentActivity
 import com.sarumah.posbersama.databinding.FragmentCategoriesBinding
 import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 import com.sarumah.posbersama.ui.home.fragment.librarys.LibrarysViewModel
@@ -30,8 +31,17 @@ class CategoriesFragment : Fragment() {
 
         setDataCategories()
         setdataAdapter()
+        mainButton()
 
         return binding.root
+    }
+
+    private fun mainButton(){
+        binding.apply {
+            btnAddnewcategories.setOnClickListener{
+                intentActivity(AddCategoriesActivity::class.java)
+            }
+        }
     }
 
     private fun setdataAdapter(){

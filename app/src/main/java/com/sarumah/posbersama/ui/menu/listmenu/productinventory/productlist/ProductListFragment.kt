@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.inyongtisto.myhelper.extension.intentActivity
 import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 import com.sarumah.posbersama.databinding.FragmentProductBinding
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.ProductInventoryViewModel
@@ -33,7 +34,11 @@ class ProductListFragment : Fragment() {
     }
 
     private fun mainButton(){
-
+        binding.apply {
+            btnAddproduct.setOnClickListener {
+                intentActivity(AddProductActivity::class.java)
+            }
+        }
     }
 
     private fun setupAdapter(){

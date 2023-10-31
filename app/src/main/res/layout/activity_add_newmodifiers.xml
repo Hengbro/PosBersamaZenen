@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_height"
+            android:layout_marginEnd="@dimen/marginNormal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginStart="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginSmall"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_close"
+                    android:layout_width="@dimen/buttonImage"
+                    android:layout_height="@dimen/buttonImage"
+                    android:src="@drawable/asset_ic_close"
+                    android:padding="@dimen/buttonImagePadding"
+                    android:layout_marginStart="@dimen/marginNormal"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add new modifiers set"
+                    android:textAppearance="@style/textAppearance.Body2.Bold"
+                    android:layout_marginStart="@dimen/marginNormal"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save modifiers set"
+                style="@style/Button.Normal"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray4"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/marginExtra"
+                android:padding="@dimen/paddingLarge">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modifier set name"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:layout_marginEnd="@dimen/marginLarge"
+                    android:textAppearance="@style/textAppearance.Body3.Bold"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputLayout.Rounded"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:layout_marginEnd="@dimen/marginLarge"
+                    android:layout_marginTop="@dimen/marginNormal"
+                    app:endIconMode="clear_text">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medium_height"
+                        android:gravity="start|center_vertical"
+                        android:hint="E.g: Topings"
+                        android:paddingVertical="@dimen/paddingSmall"
+                        android:paddingStart="@dimen/paddingMedium"
+                        android:paddingEnd="@dimen/paddingNormal"
+                        android:textAppearance="@style/textAppearance.Body3"
+                        android:textColor="@color/natural_900" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Options"
+                    android:layout_marginTop="@dimen/marginExtra"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:textAppearance="@style/textAppearance.Body3.Bold"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:layout_marginEnd="@dimen/marginLarge">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/paddingSmall"
+                        android:layout_margin="@dimen/marginNormal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_book"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@color/orange_1"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/buttonImage"
+                                android:layout_height="@dimen/buttonImage"
+                                android:padding="@dimen/buttonImagePadding"
+                                android:src="@drawable/asset_ic_recipes_ingredients"
+                                app:tint="@color/orange_600" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/marginNormal"
+                            android:layout_toEndOf="@+id/card_book"
+                            android:text="Include ingredients into modifier options"
+                            android:textAppearance="@style/textAppearance.Body3.Bold" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/small_height"
+                            android:paddingEnd="@dimen/marginNormal"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginNormal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_frame"
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_frame"
+                        android:padding="@dimen/buttonImagePadding"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_toEndOf="@+id/btn_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medium_height"
+                        style="@style/Button.OutlineButton"
+                        android:layout_marginEnd="@dimen/marginLarge"
+                        android:backgroundTint="@color/white"
+                        android:text="E.g: cheese"
+                        android:gravity="start|center_vertical"
+                        android:layout_centerVertical="true"
+                        android:textAppearance="@style/textAppearance.Body3"
+                        android:textColor="@color/gray3"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_delete"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/buttonImagePadding"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginNormal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_frametwo"
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_frame"
+                        android:padding="@dimen/buttonImagePadding"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_toEndOf="@+id/btn_frametwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medium_height"
+                        style="@style/Button.OutlineButton"
+                        android:layout_marginEnd="@dimen/marginLarge"
+                        android:backgroundTint="@color/white"
+                        android:text="E.g: cheese"
+                        android:gravity="start|center_vertical"
+                        android:layout_centerVertical="true"
+                        android:textAppearance="@style/textAppearance.Body3"
+                        android:textColor="@color/gray3"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/buttonImage"
+                        android:layout_height="@dimen/buttonImage"
+                        android:src="@drawable/asset_ic_delete"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/buttonImagePadding"/>
+
+                </RelativeLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    style="@style/Button.Normal"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/marginNormal"
+                    android:layout_marginEnd="@dimen/marginNormal"
+                    android:text="Add new options"
+                    android:textAppearance="@style/textAppearance.Body3.Bold"
+                    app:iconTint="@color/selesaiSoft"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/imageNormal"
+                    app:icon="@drawable/baseline_add"
+                    android:textColor="@color/selesaiSoft"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginExtra"
+                    android:text="Add to menu"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:textAppearance="@style/textAppearance.Body3.Bold"
+                    android:textColor="@color/dark" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/marginNormal"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:background="@color/gray4" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_open_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/red4"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/buttonImage"
+                            android:layout_height="@dimen/buttonImage"
+                            android:padding="@dimen/buttonImagePadding"
+                            android:src="@drawable/asset_ic_open_book_menu"
+                            app:tint="@color/red" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/marginNormal"
+                        android:layout_toEndOf="@+id/card_open_book"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Morning menu"
+                            android:textAppearance="@style/textAppearance.Body3.Bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="07:00 AM - 11:00 AM"
+                            android:textAppearance="@style/textAppearance.Body3" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:background="@color/gray4" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_open_book_dua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/purple_200"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/buttonImage"
+                            android:layout_height="@dimen/buttonImage"
+                            android:padding="@dimen/buttonImagePadding"
+                            android:src="@drawable/asset_ic_open_book_menu"
+                            app:tint="@color/purple_500" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/marginNormal"
+                        android:layout_toEndOf="@+id/card_open_book_dua"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Evening menu"
+                            android:textAppearance="@style/textAppearance.Body3.Bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="05:00 PM - 10:00 PM"
+                            android:textAppearance="@style/textAppearance.Body3" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="@dimen/marginLarge"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:background="@color/gray4" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

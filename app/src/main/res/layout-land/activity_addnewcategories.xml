@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/paddingMedium">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/buttonImage"
+            android:layout_height="@dimen/buttonImage"
+            android:src="@drawable/asset_ic_close"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/buttonImagePadding"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="@dimen/paddingNormal"
+            android:layout_toEndOf="@+id/btn_close"
+            android:text="Add new category"
+            android:textAppearance="@style/textAppearance.Body2"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginEnd="@dimen/marginMedium"
+                android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:text="0 Selectrd"
+                style="@style/Button.TextButton"
+                android:textAppearance="@style/textAppearance.Body2.Bold"
+                android:textColor="@color/dark" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginEnd="@dimen/marginMedium"
+                android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:text="Save category"
+                android:textAppearance="@style/textAppearance.Body2"
+                android:textColor="@color/white"
+                style="@style/Button.Normal"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray4" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMedium"
+            android:padding="@dimen/paddingNormal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category name"
+                android:textStyle="bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout.Rounded"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginTop="@dimen/marginNormal"
+                app:endIconMode="clear_text">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    android:gravity="center_vertical"
+                    android:hint="Enter category name"
+                    android:paddingVertical="@dimen/paddingSmall"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:paddingEnd="@dimen/paddingNormal"
+                    android:textAppearance="@style/textAppearance.Body2"
+                    android:textColor="@color/natural_900"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asign product into catageory"
+                android:textStyle="bold"
+                android:textAppearance="@style/textAppearance.Body3.Bold"
+                android:layout_marginTop="@dimen/marginMedium" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout.Rounded"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingNormal"
+                app:startIconDrawable="@drawable/asset_ic_search_sizeable"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/medium_height"
+                    android:gravity="center_vertical"
+                    android:hint="Search for product to be assigned"
+                    android:paddingVertical="@dimen/paddingSmall"
+                    android:paddingStart="@dimen/paddingNormal"
+                    android:paddingEnd="@dimen/paddingNormal"
+                    android:textAppearance="@style/textAppearance.Body2"
+                    android:textColor="@color/natural_900"
+                    app:endIconMode="clear_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/marginNormal"
+                android:background="@color/dark"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginNormal">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/medium_height"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_categories" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
