@@ -5,21 +5,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inyongtisto.myhelper.extension.getInitial
-import com.sarumah.posbersama.core.data.source.modal.Categories
+import com.sarumah.posbersama.core.data.source.modal.CategoryJava
 import com.sarumah.posbersama.databinding.ItemCategoriesBinding
 
 @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
-    private var data = ArrayList<Categories>()
+    private var data = ArrayList<CategoryJava>()
     inner class ViewHolder(private val itemBinding: ItemCategoriesBinding): RecyclerView.ViewHolder(itemBinding.root){
 
-            fun bind(item : Categories, position: Int){
+            fun bind(item : CategoryJava, position: Int){
 
                 itemBinding.apply {
 
                     tvName.text = item.name
-                    txtQty.text = item.qty+" Product"
+                    //txtQty.text = item.qty
                     txtIntial.text = item.name.getInitial()
 
                     /*layout.setOnClickListener{
@@ -34,7 +34,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
             notifyItemRemoved(index)
         }
 
-        fun addItems(items : List<Categories>){
+        fun addItems(items : List<CategoryJava>){
             data.clear()
             data.addAll(items)
             notifyDataSetChanged()

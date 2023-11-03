@@ -1,6 +1,5 @@
 package com.sarumah.posbersama.core.data.source.local
 
-import com.sarumah.posbersama.core.data.source.modal.Categories
 import com.sarumah.posbersama.core.data.source.modal.Products
 import com.sarumah.posbersama.R
 import com.sarumah.posbersama.core.data.source.modal.Menu
@@ -11,13 +10,13 @@ import com.sarumah.posbersama.core.data.source.modal.Variations
 
 object Dummy {
 
-    val listCategories= listOf (
+    /*val listCategories= listOf (
 
-        Categories(id = 1, name = "Food", qty = "2"),
-        Categories(id = 2, name = "Drink", qty = "3"),
-        Categories(id = 3, name = "Snakck", qty = "2"),
-        Categories(id = 4, name = "Nothing", qty = "4")
-    )
+        Category(id = 1, name = "Food", qty = "2"),
+        Category(id = 2, name = "Drink", qty = "3"),
+        Category(id = 3, name = "Snakck", qty = "2"),
+        Category(id = 4, name = "Nothing", qty = "4")
+    )*/
 
     val listProduct = listOf(
         Products(id = 1, name ="Aquades", category = "Drink", price = 10000, imageDummy = R.drawable.tempat_makan),

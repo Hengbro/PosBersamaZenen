@@ -96,6 +96,7 @@
                 app:endIconMode="clear_text">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_namecategory"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/medium_height"
                     android:gravity="center_vertical"
@@ -124,6 +125,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_searchcategory"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/medium_height"
                     android:gravity="center_vertical"

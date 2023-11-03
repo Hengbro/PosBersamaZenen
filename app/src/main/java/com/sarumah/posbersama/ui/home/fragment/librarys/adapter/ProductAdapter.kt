@@ -5,14 +5,11 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.inyongtisto.myhelper.extension.getInitial
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.popUpMenu
 import com.inyongtisto.myhelper.extension.toRupiah
 import com.sarumah.posbersama.EmptyActivity
-import com.sarumah.posbersama.core.data.source.modal.Categories
 import com.sarumah.posbersama.core.data.source.modal.Products
-import com.sarumah.posbersama.databinding.ItemCategoriesBinding
 import com.sarumah.posbersama.databinding.ItemProductBinding
 import com.sarumah.posbersama.ui.home.orderproduct.OrderProductActivity
 import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity

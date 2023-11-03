@@ -1,24 +1,23 @@
 package com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.inyongtisto.myhelper.extension.intentActivity
+import com.sarumah.posbersama.core.data.room.AppDatabase
+import com.sarumah.posbersama.core.data.source.modal.CategoryJava
 import com.sarumah.posbersama.databinding.FragmentCategoriesBinding
-import com.sarumah.posbersama.databinding.FragmentEmptyBinding
-import com.sarumah.posbersama.ui.home.fragment.librarys.LibrarysViewModel
-import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.CategoryAdapter
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter.CategoryMenuAdapter
-import org.koin.android.ext.android.get
 
 class CategoriesFragment : Fragment() {
 
     private var _binding: FragmentCategoriesBinding? = null
-    private lateinit var viewModel : LibrarysViewModel
-    private val adapterCategory = CategoryMenuAdapter()
+    private var list = mutableListOf<CategoryJava>()
+    private lateinit var adapterCategory: CategoryMenuAdapter
+    private lateinit var database: AppDatabase
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,14 +25,22 @@ class CategoriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(requireActivity()).get(LibrarysViewModel::class.java)
+
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
 
-        setDataCategories()
-        setdataAdapter()
+        database = AppDatabase.getDatabase(requireContext().applicationContext)
+        adapterCategory = CategoryMenuAdapter(list)
+
         mainButton()
+        setdataAdapter()
+
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setDataCategories()
     }
 
     private fun mainButton(){
@@ -50,10 +57,11 @@ class CategoriesFragment : Fragment() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setDataCategories(){
-        viewModel.listCategories.observe(requireActivity()){
-            adapterCategory.addItems(it)
-        }
+        list.clear()
+        list.addAll(database.categoryDao().getAllCategories())
+        adapterCategory.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

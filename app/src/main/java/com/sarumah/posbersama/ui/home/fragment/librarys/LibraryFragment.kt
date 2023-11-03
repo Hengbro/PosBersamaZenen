@@ -6,13 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.inyongtisto.myhelper.extension.intentActivity
-import com.inyongtisto.myhelper.extension.popUpMenu
-import com.sarumah.posbersama.EmptyActivity
 import com.sarumah.posbersama.databinding.FragmentLibraryBinding
 import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.CategoryAdapter
 import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.ProductAdapter
-import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity
 
 class LibraryFragment : Fragment() {
 
@@ -34,7 +30,7 @@ class LibraryFragment : Fragment() {
         _binding = FragmentLibraryBinding.inflate(inflater, container, false)
 
         setupAdapter()
-        setupDataCategories()
+        //setupDataCategories()
         setupDataProduct()
 
         return binding.root
@@ -47,11 +43,11 @@ class LibraryFragment : Fragment() {
         }
     }
 
-    private fun setupDataCategories(){
-        viewModel.listCategories.observe(requireActivity()) {
+    /*private fun setupDataCategories(){
+        viewModel.listCategory.observe(requireActivity()) {
             adapterCategory.addItems(it)
         }
-    }
+    }*/
 
     private fun setupDataProduct(){
         viewModel.listProducts.observe(requireActivity()){

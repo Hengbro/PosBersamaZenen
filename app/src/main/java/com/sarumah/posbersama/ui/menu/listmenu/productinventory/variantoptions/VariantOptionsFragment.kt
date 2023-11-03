@@ -11,7 +11,6 @@ import com.sarumah.posbersama.databinding.FragmentEmptyBinding
 import com.sarumah.posbersama.databinding.FragmentModifiersBinding
 import com.sarumah.posbersama.databinding.FragmentVariantBinding
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.ProductInventoryViewModel
-import com.sarumah.posbersama.ui.menu.listmenu.productinventory.modifiersoptions.adapter.TopingOptionsAdapter
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.variantoptions.adapter.VariantOptionsAdapter
 
 class VariantOptionsFragment : Fragment() {

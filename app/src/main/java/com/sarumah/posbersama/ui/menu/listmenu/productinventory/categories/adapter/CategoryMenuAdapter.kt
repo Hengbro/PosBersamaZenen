@@ -1,58 +1,35 @@
 package com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.inyongtisto.myhelper.extension.getInitial
-import com.sarumah.posbersama.core.data.source.modal.Categories
-import com.sarumah.posbersama.databinding.ItemAddcategoriesBinding
-import com.sarumah.posbersama.databinding.ItemCategoriesBinding
+import com.sarumah.posbersama.R
+import com.sarumah.posbersama.core.data.source.modal.CategoryJava
 
-@SuppressLint("NotifyDataSetChanged", "SetTextI18n")
-class CategoryMenuAdapter : RecyclerView.Adapter<CategoryMenuAdapter.ViewHolder>() {
+class CategoryMenuAdapter (var list: List<CategoryJava>) :
+    RecyclerView.Adapter<CategoryMenuAdapter.ViewHolder>() {
 
-    private var data = ArrayList<Categories>()
-    inner class ViewHolder(private val itemBinding: ItemAddcategoriesBinding): RecyclerView.ViewHolder(itemBinding.root){
+    class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
+        var name: TextView
 
-            fun bind(item : Categories, position: Int){
-
-                itemBinding.apply {
-
-                    tvName.text = item.name
-                    tvQty.text = item.qty+" Product"
-
-                    /*layout.setOnClickListener{
-                        onClick.invoke(item)
-                    }*/
-                }
-            }
-        }
-
-        fun removeAt(index: Int) {
-            data.removeAt(index)
-            notifyItemRemoved(index)
-        }
-
-        fun addItems(items : List<Categories>){
-            data.clear()
-            data.addAll(items)
-            notifyDataSetChanged()
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ViewHolder(ItemAddcategoriesBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false))
-        }
-
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.bind(data[position], position)
-        }
-
-        override fun getItemCount(): Int {
-            return data.size
+        init {
+            name = view.findViewById(R.id.tv_name)
         }
 
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_addcategories, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.name.text = list[position].name
+    }
+}
