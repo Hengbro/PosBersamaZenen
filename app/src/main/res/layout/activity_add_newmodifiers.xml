@@ -43,6 +43,7 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save modifiers set"
@@ -88,6 +89,7 @@
                     app:endIconMode="clear_text">
 
                     <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/txt_name"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/medium_height"
                         android:gravity="start|center_vertical"
