@@ -38,6 +38,8 @@
         <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.AddCategoriesActivity" />
         <activity android:name="com.sarumah.posbersama.ui.menu.listmenu.productinventory.modifiersoptions.AddModifiersActivity" />
         <activity android:name="com.sarumah.posbersama.ui.auth.LoginActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.category.CategoryActivity" />
+        <activity android:name="com.sarumah.posbersama.ui.category.CreateCategoriesActivity" />
     </application>
 
 </manifest>

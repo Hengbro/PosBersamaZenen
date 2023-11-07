@@ -3,11 +3,13 @@ package com.sarumah.posbersama.ui.auth
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.inyongtisto.myhelper.extension.getString
+import com.inyongtisto.myhelper.extension.pushActivity
 import com.inyongtisto.myhelper.extension.toastError
 import com.inyongtisto.myhelper.extension.toastSuccess
 import com.sarumah.posbersama.core.source.remote.network.State
 import com.sarumah.posbersama.core.source.remote.request.LoginRequest
 import com.sarumah.posbersama.databinding.ActivityLoginBinding
+import com.sarumah.posbersama.ui.home.HomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -47,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 State.SUCCESS -> {
                     val body = it.body
                     toastSuccess("Halo, " + body?.name)
+                    pushActivity(HomeActivity::class.java)
                 }
 
                 State.ERROR -> {

@@ -1,4 +1,4 @@
-package com.sarumah.posbersama.core.source.remote.request.base
+package com.sarumah.posbersama.core.source.remote.response.base
 
 data class ErrorResponse(
     val code: Int? = null,

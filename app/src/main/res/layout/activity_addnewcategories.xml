@@ -48,6 +48,21 @@
                 android:textColor="@color/dark" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete"
+                style="@style/Button.Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginMedium"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:backgroundTint="@color/red3"
+                android:padding="@dimen/_5sdp"
+                android:text="Delete"
+                android:textAppearance="@style/textAppearance.Body2"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/medium_height"

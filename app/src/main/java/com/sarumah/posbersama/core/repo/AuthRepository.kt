@@ -5,7 +5,7 @@ import com.sarumah.posbersama.core.source.model.User
 import com.sarumah.posbersama.core.source.remote.network.ApiService
 import com.sarumah.posbersama.core.source.remote.network.ResponseHandler
 import com.sarumah.posbersama.core.source.remote.request.LoginRequest
-import com.sarumah.posbersama.core.source.remote.request.base.DataResponse
+import com.sarumah.posbersama.core.source.remote.response.base.DataResponse
 import com.sarumah.posbersama.util.Prefs
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flowOn
