@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sarumah.posbersama.core.data.source.modal.Topings
+import com.sarumah.posbersama.core.source.model.Topings
 import com.sarumah.posbersama.databinding.ItemModifiersoptionsBinding
 
 @SuppressLint("NotifyDataSetChanged", "SetTextI18n")

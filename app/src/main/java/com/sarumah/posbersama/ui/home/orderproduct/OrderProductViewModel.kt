@@ -3,10 +3,10 @@ package com.sarumah.posbersama.ui.home.orderproduct
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sarumah.posbersama.core.data.source.local.Dummy
-import com.sarumah.posbersama.core.data.source.modal.Texass
-import com.sarumah.posbersama.core.data.source.modal.Topings
-import com.sarumah.posbersama.core.data.source.modal.Variations
+import com.sarumah.posbersama.core.source.local.Dummy
+import com.sarumah.posbersama.core.source.model.Texass
+import com.sarumah.posbersama.core.source.model.Topings
+import com.sarumah.posbersama.core.source.model.Variations
 
 class OrderProductViewModel: ViewModel() {
 

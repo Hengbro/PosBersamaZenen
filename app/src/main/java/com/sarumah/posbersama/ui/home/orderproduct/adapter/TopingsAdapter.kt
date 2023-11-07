@@ -4,14 +4,9 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.inyongtisto.myhelper.extension.intentActivity
-import com.inyongtisto.myhelper.extension.popUpMenu
 import com.inyongtisto.myhelper.extension.toRupiah
-import com.sarumah.posbersama.core.data.source.modal.Products
-import com.sarumah.posbersama.core.data.source.modal.Topings
-import com.sarumah.posbersama.databinding.ItemProductBinding
+import com.sarumah.posbersama.core.source.model.Topings
 import com.sarumah.posbersama.databinding.ItemTopingsBinding
-import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity
 
 @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
 class TopingsAdapter : RecyclerView.Adapter<TopingsAdapter.ViewHolder>() {

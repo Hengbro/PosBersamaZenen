@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.popUpMenu
+import com.inyongtisto.myhelper.extension.pushActivity
 import com.inyongtisto.myhelper.extension.toGone
 import com.inyongtisto.myhelper.extension.toVisible
 import com.sarumah.posbersama.EmptyActivity
 import com.sarumah.posbersama.R
 import com.sarumah.posbersama.databinding.ActivityHomedashboardBinding
+import com.sarumah.posbersama.ui.auth.LoginActivity
 import com.sarumah.posbersama.ui.home.fragment.bills.BillsFragment
 import com.sarumah.posbersama.ui.home.fragment.FavoriteFragment
 import com.sarumah.posbersama.ui.home.fragment.KeypadFragment
@@ -31,6 +33,8 @@ class HomeActivity : AppCompatActivity() {
 
         mainButton()
         callFargment(LibraryFragment())
+
+        pushActivity(LoginActivity::class.java)
     }
 
     private fun mainButton() {

@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -73,8 +74,10 @@ dependencies {
     implementation("com.github.TistoW:MyHelper:2.0.41")
 
     //sqllite
-    implementation ("androidx.room:room-runtime:2.6.0")
-    annotationProcessor ("androidx.room:room-compiler:2.6.0")
-    kapt("androidx.room:room-compiler:2.5.0")
-    implementation ("androidx.room:room-rxjava2:2.6.0")
+    implementation("androidx.room:room-runtime:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
+    kapt("androidx.room:room-compiler:2.6.0")
+
+    // shared preferences
+    implementation("com.chibatching.kotpref:kotpref:2.13.1")
 }
