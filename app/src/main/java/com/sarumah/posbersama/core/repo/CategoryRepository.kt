@@ -1,5 +1,6 @@
 package com.sarumah.posbersama.core.repo
 
+import com.sarumah.posbersama.core.source.local.AppDatabase
 import com.sarumah.posbersama.core.source.local.LocalDataSource
 import com.sarumah.posbersama.core.source.local.entity.CategoryEntity
 import com.sarumah.posbersama.core.source.model.User
@@ -14,7 +15,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
 
-class CategoryRepository(val local: LocalDataSource, val remote: ApiService) {
+class CategoryRepository(val local: AppDatabase, val remote: ApiService) {
+
+    private fun dao() = local.categoryDao()
+    fun getLocal() = local.categoryDao().getAll()
 
     fun get() = object : ResponseHandler<List<CategoryEntity>, ListResponse<CategoryEntity>>() {
         override suspend fun createCall(): Response<ListResponse<CategoryEntity>> {
@@ -22,7 +26,9 @@ class CategoryRepository(val local: LocalDataSource, val remote: ApiService) {
         }
 
         override suspend fun resultCall(data: ListResponse<CategoryEntity>): List<CategoryEntity> {
-            return data.data
+            val response = data.data
+            dao().insert(response)
+            return response
         }
     }.asFlow().flowOn(Dispatchers.IO)
 
@@ -33,7 +39,9 @@ class CategoryRepository(val local: LocalDataSource, val remote: ApiService) {
             }
 
             override suspend fun resultCall(data: DataResponse<CategoryEntity>): CategoryEntity {
-                return data.data ?: CategoryEntity()
+                val response = data.data ?: CategoryEntity()
+                dao().insert(response)
+                return response
             }
         }.asFlow().flowOn(Dispatchers.IO)
 
@@ -44,17 +52,20 @@ class CategoryRepository(val local: LocalDataSource, val remote: ApiService) {
             }
 
             override suspend fun resultCall(data: DataResponse<CategoryEntity>): CategoryEntity {
-                return data.data ?: CategoryEntity()
+                val response = data.data ?: CategoryEntity()
+                dao().update(response)
+                return response
             }
         }.asFlow().flowOn(Dispatchers.IO)
 
-    fun delete(data: CategoryEntity) =
+    fun delete(body: CategoryEntity) =
         object : ResponseHandler<CategoryEntity, DataResponse<CategoryEntity>>() {
             override suspend fun createCall(): Response<DataResponse<CategoryEntity>> {
-                return remote.deleteCategory(data.id)
+                return remote.deleteCategory(body.id)
             }
 
             override suspend fun resultCall(data: DataResponse<CategoryEntity>): CategoryEntity {
+                dao().delete(body)
                 return data.data ?: CategoryEntity()
             }
         }.asFlow().flowOn(Dispatchers.IO)

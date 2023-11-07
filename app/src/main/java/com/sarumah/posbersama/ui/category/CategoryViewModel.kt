@@ -8,6 +8,8 @@ import com.sarumah.posbersama.core.source.remote.request.CategoryRequest
 import com.sarumah.posbersama.core.source.remote.request.LoginRequest
 
 class CategoryViewModel(private val repository: CategoryRepository) : ViewModel() {
+
+    fun getLocal() = repository.getLocal().asLiveData()
     fun get() = repository.get().asLiveData()
     fun create(request: CategoryRequest) = repository.create(request).asLiveData()
     fun update(request: CategoryRequest) = repository.update(request).asLiveData()

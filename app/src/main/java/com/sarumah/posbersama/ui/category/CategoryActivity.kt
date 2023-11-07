@@ -34,6 +34,7 @@ class CategoryActivity : AppCompatActivity() {
         mainButton()
         setupAdapter()
         getCategory()
+        observe()
     }
 
     private fun mainButton() {
@@ -48,22 +49,13 @@ class CategoryActivity : AppCompatActivity() {
         binding.rvData.adapter = adapter
     }
 
-    private fun getCategory() {
-        viewModel.get().observe(this) {
-            when (it.state) {
-                State.SUCCESS -> {
-                    val body = it.body
-                    adapter.submitList(body)
-                }
-
-                State.ERROR -> {
-                    toastError(it.message)
-                }
-
-                State.LOADING -> {
-
-                }
-            }
+    private fun observe() {
+        viewModel.getLocal().observe(this) {
+            adapter.submitList(it)
         }
+    }
+
+    private fun getCategory() {
+        viewModel.get().observe(this) {}
     }
 }
