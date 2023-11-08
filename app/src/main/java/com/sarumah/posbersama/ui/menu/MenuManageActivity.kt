@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.sarumah.posbersama.EmptyActivity
-import com.sarumah.posbersama.core.data.source.modal.Menu
+import com.sarumah.posbersama.core.source.model.Menu
 import com.sarumah.posbersama.databinding.ActivityMainmenuBinding
-import com.sarumah.posbersama.databinding.ActivityProductInventoryBinding
 import com.sarumah.posbersama.ui.home.HomeActivity
-import com.sarumah.posbersama.ui.home.fragment.librarys.adapter.ProductAdapter
 import com.sarumah.posbersama.ui.menu.adapter.MenuAdapter
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.ProdukInventoryActivity
 

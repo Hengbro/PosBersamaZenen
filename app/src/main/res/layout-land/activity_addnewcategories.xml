@@ -15,16 +15,16 @@
             android:id="@+id/btn_close"
             android:layout_width="@dimen/buttonImage"
             android:layout_height="@dimen/buttonImage"
-            android:src="@drawable/asset_ic_close"
             android:layout_centerVertical="true"
-            android:padding="@dimen/buttonImagePadding"/>
+            android:padding="@dimen/buttonImagePadding"
+            android:src="@drawable/asset_ic_close" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:paddingStart="@dimen/paddingNormal"
             android:layout_toEndOf="@+id/btn_close"
+            android:paddingStart="@dimen/paddingNormal"
             android:text="Add new category"
             android:textAppearance="@style/textAppearance.Body2"
             android:textStyle="bold" />
@@ -37,27 +37,41 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/medium_height"
-                android:layout_marginEnd="@dimen/marginMedium"
                 android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginMedium"
                 android:layout_marginBottom="@dimen/marginSmall"
                 android:text="0 Selectrd"
-                style="@style/Button.TextButton"
                 android:textAppearance="@style/textAppearance.Body2.Bold"
                 android:textColor="@color/dark" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_save"
+                android:id="@+id/btn_delete"
+                style="@style/Button.Normal"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/medium_height"
-                android:layout_marginEnd="@dimen/marginMedium"
                 android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginMedium"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:backgroundTint="@color/red3"
+                android:text="Delete"
+                android:textAppearance="@style/textAppearance.Body2"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                style="@style/Button.Normal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/medium_height"
+                android:layout_marginTop="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginMedium"
                 android:layout_marginBottom="@dimen/marginSmall"
                 android:text="Save category"
                 android:textAppearance="@style/textAppearance.Body2"
                 android:textColor="@color/white"
-                style="@style/Button.Normal"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -78,15 +92,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/marginMedium"
-            android:padding="@dimen/paddingNormal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/paddingNormal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category name"
-                android:textStyle="bold"
-                android:textAppearance="@style/textAppearance.Body3.Bold" />
+                android:textAppearance="@style/textAppearance.Body3.Bold"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout.Rounded"
@@ -105,24 +119,24 @@
                     android:paddingStart="@dimen/paddingNormal"
                     android:paddingEnd="@dimen/paddingNormal"
                     android:textAppearance="@style/textAppearance.Body2"
-                    android:textColor="@color/natural_900"/>
+                    android:textColor="@color/natural_900" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginMedium"
                 android:text="Asign product into catageory"
-                android:textStyle="bold"
                 android:textAppearance="@style/textAppearance.Body3.Bold"
-                android:layout_marginTop="@dimen/marginMedium" />
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout.Rounded"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/paddingNormal"
-                app:startIconDrawable="@drawable/asset_ic_search_sizeable"
-                android:layout_height="wrap_content">
+                app:startIconDrawable="@drawable/asset_ic_search_sizeable">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/txt_searchcategory"
@@ -143,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="@dimen/marginNormal"
-                android:background="@color/dark"/>
+                android:background="@color/dark" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

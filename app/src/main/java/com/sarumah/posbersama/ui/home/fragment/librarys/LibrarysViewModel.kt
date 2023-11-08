@@ -3,8 +3,8 @@ package com.sarumah.posbersama.ui.home.fragment.librarys
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sarumah.posbersama.core.data.source.local.Dummy
-import com.sarumah.posbersama.core.data.source.modal.Products
+import com.sarumah.posbersama.core.source.local.Dummy
+import com.sarumah.posbersama.core.source.model.Products
 
 class LibrarysViewModel: ViewModel() {
 

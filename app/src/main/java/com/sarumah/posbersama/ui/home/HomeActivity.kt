@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.popUpMenu
+import com.inyongtisto.myhelper.extension.pushActivity
 import com.inyongtisto.myhelper.extension.toGone
 import com.inyongtisto.myhelper.extension.toVisible
 import com.sarumah.posbersama.EmptyActivity
 import com.sarumah.posbersama.R
 import com.sarumah.posbersama.databinding.ActivityHomedashboardBinding
+import com.sarumah.posbersama.ui.auth.LoginActivity
+import com.sarumah.posbersama.ui.category.CategoryActivity
 import com.sarumah.posbersama.ui.home.fragment.bills.BillsFragment
 import com.sarumah.posbersama.ui.home.fragment.FavoriteFragment
 import com.sarumah.posbersama.ui.home.fragment.KeypadFragment
@@ -18,6 +21,7 @@ import com.sarumah.posbersama.ui.home.fragment.librarys.LibraryFragment
 import com.sarumah.posbersama.ui.home.fragment.TablesFragment
 import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity
 import com.sarumah.posbersama.ui.menu.MenuManageActivity
+import com.sarumah.posbersama.util.Prefs
 
 
 class HomeActivity : AppCompatActivity() {
@@ -31,6 +35,11 @@ class HomeActivity : AppCompatActivity() {
 
         mainButton()
         callFargment(LibraryFragment())
+
+        if (!Prefs.isLogin) {
+            pushActivity(LoginActivity::class.java)
+        }
+
     }
 
     private fun mainButton() {
@@ -70,7 +79,8 @@ class HomeActivity : AppCompatActivity() {
             }
 
             btnImagemenu.setOnClickListener {
-                intentActivity(MenuManageActivity::class.java)
+//                intentActivity(MenuManageActivity::class.java)
+                intentActivity(CategoryActivity::class.java)
             }
             val context = root.context
 
@@ -98,7 +108,8 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setActive(view: TextView) {
         binding.apply {
-            val listViews = listOf<TextView>(btnLibrary, btnFavorites, btnKeypad, btnTables, btnBills)
+            val listViews =
+                listOf<TextView>(btnLibrary, btnFavorites, btnKeypad, btnTables, btnBills)
             listViews.forEach {
                 if (it == view) {
                     it.setTextColor(getColor(R.color.colorPrimary))
@@ -109,7 +120,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupAdapter(){
+    private fun setupAdapter() {
         binding.apply {
 
         }

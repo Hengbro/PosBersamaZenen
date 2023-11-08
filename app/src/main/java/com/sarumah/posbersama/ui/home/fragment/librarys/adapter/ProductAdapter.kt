@@ -9,7 +9,7 @@ import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.popUpMenu
 import com.inyongtisto.myhelper.extension.toRupiah
 import com.sarumah.posbersama.EmptyActivity
-import com.sarumah.posbersama.core.data.source.modal.Products
+import com.sarumah.posbersama.core.source.model.Products
 import com.sarumah.posbersama.databinding.ItemProductBinding
 import com.sarumah.posbersama.ui.home.orderproduct.OrderProductActivity
 import com.sarumah.posbersama.ui.menu.CustomizeNavbarActivity

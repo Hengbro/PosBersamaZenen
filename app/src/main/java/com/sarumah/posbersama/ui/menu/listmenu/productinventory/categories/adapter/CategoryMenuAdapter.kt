@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sarumah.posbersama.R
-import com.sarumah.posbersama.core.data.source.modal.CategoryJava
+import com.sarumah.posbersama.core.source.model.CategoryJava
 
 class CategoryMenuAdapter (var list: List<CategoryJava>) :
     RecyclerView.Adapter<CategoryMenuAdapter.ViewHolder>() {

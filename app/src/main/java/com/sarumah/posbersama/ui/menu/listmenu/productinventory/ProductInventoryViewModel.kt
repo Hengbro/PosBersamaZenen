@@ -3,10 +3,10 @@ package com.sarumah.posbersama.ui.menu.listmenu.productinventory
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sarumah.posbersama.core.data.source.local.Dummy
-import com.sarumah.posbersama.core.data.source.modal.Products
-import com.sarumah.posbersama.core.data.source.modal.Topings
-import com.sarumah.posbersama.core.data.source.modal.VariantOptions
+import com.sarumah.posbersama.core.source.local.Dummy
+import com.sarumah.posbersama.core.source.model.Products
+import com.sarumah.posbersama.core.source.model.Topings
+import com.sarumah.posbersama.core.source.model.VariantOptions
 
 class ProductInventoryViewModel: ViewModel() {
 

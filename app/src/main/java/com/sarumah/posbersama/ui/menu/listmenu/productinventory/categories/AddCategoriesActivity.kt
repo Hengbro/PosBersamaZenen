@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.inyongtisto.myhelper.extension.isEmpty
-import com.sarumah.posbersama.core.data.room.AppDatabase
-import com.sarumah.posbersama.core.data.source.modal.CategoryJava
+import com.sarumah.posbersama.core.room.AppDatabaseOld
+import com.sarumah.posbersama.core.source.model.CategoryJava
 import com.sarumah.posbersama.databinding.ActivityAddnewcategoriesBinding
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter.CategoryMenuAdapter
-import io.reactivex.Observable
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 
 class AddCategoriesActivity : AppCompatActivity() {
 
@@ -19,14 +16,14 @@ class AddCategoriesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddnewcategoriesBinding
     private var list = mutableListOf<CategoryJava>()
     private lateinit var adapterCategory: CategoryMenuAdapter
-    private lateinit var database: AppDatabase
+    private lateinit var database: AppDatabaseOld
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityAddnewcategoriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        database = AppDatabase.getDatabase(this.applicationContext)
+        database = AppDatabaseOld.getDatabase(this.applicationContext)
         adapterCategory = CategoryMenuAdapter(list)
 
         mainButton()
@@ -62,15 +59,15 @@ class AddCategoriesActivity : AppCompatActivity() {
 
 
     private fun addCategory(){
-        val myDb: AppDatabase = AppDatabase.getDatabase(this@AddCategoriesActivity)
+        val myDb: AppDatabaseOld = AppDatabaseOld.getDatabase(this@AddCategoriesActivity)
         val data = CategoryJava()
         data.name = binding.txtNamecategory.text.toString()
 
-        CompositeDisposable().add(Observable.fromCallable { myDb.categoryDao().insert(data) }
-            .subscribeOn(Schedulers.computation())
-            .subscribe {
-                Log.d("respons", "data inserted")
-            })
+//        CompositeDisposable().add(Observable.fromCallable { myDb.categoryDao().insert(data) }
+//            .subscribeOn(Schedulers.computation())
+//            .subscribe {
+//                Log.d("respons", "data inserted")
+//            })
     }
 
     private fun setdataAdapter(){
