@@ -1,13 +1,10 @@
 package com.sarumah.posbersama.ui.menu.listmenu.productinventory.productlist
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.inyongtisto.myhelper.extension.isEmpty
 import com.sarumah.posbersama.core.room.AppDatabaseOld
-import com.sarumah.posbersama.core.source.model.CategoryJava
 import com.sarumah.posbersama.databinding.ActivityAddnewproductBinding
-import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter.CategoryMenuAdapter
 
 class AddProductActivity : AppCompatActivity() {
 

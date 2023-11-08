@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inyongtisto.myhelper.extension.getInitial
-import com.sarumah.posbersama.core.source.model.CategoryJava
 import com.sarumah.posbersama.databinding.ItemCategoriesBinding
 
 @SuppressLint("NotifyDataSetChanged", "SetTextI18n")

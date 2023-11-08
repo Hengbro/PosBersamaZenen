@@ -2,85 +2,141 @@ package com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.inyongtisto.myhelper.extension.extra
+import com.inyongtisto.myhelper.extension.getString
 import com.inyongtisto.myhelper.extension.isEmpty
-import com.sarumah.posbersama.core.room.AppDatabaseOld
-import com.sarumah.posbersama.core.source.model.CategoryJava
+import com.inyongtisto.myhelper.extension.showConfirmDialog
+import com.inyongtisto.myhelper.extension.toVisible
+import com.inyongtisto.myhelper.extension.toastError
+import com.inyongtisto.myhelper.extension.toastSuccess
+import com.sarumah.posbersama.core.source.local.entity.CategoryEntity
+import com.sarumah.posbersama.core.source.remote.network.State
+import com.sarumah.posbersama.core.source.remote.request.CategoryRequest
 import com.sarumah.posbersama.databinding.ActivityAddnewcategoriesBinding
-import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter.CategoryMenuAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddCategoriesActivity : AppCompatActivity() {
 
-
     private lateinit var binding: ActivityAddnewcategoriesBinding
-    private var list = mutableListOf<CategoryJava>()
-    private lateinit var adapterCategory: CategoryMenuAdapter
-    private lateinit var database: AppDatabaseOld
+    private val category by extra<CategoryEntity>("extra")
+    private val viewModel: CategoryViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityAddnewcategoriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        database = AppDatabaseOld.getDatabase(this.applicationContext)
-        adapterCategory = CategoryMenuAdapter(list)
-
+        initUi()
         mainButton()
-        setdataAdapter()
-
     }
 
-    override fun onResume() {
-        super.onResume()
-        setDataCategories()
+    private fun initUi() {
+        category?.let {
+            binding.txtNamecategory.setText(it.name)
+            binding.btnDelete.toVisible()
+        }
     }
 
-    private fun mainButton(){
+    private fun mainButton() {
         binding.apply {
             btnSave.setOnClickListener {
-                if(validate()){
-                    addCategory()
-                    finish()
+                if (validate()) {
+                    if (category != null) {
+                        update()
+                    } else {
+                        create()
+                    }
                 }
             }
+
             btnClose.setOnClickListener {
                 onBackPressedDispatcher.onBackPressed()
+            }
+
+            btnDelete.setOnClickListener {
+                showConfirmDialog(
+                    title = "Hapus",
+                    subtitle = "Apakah anda yakin ingin menghapus category ini?",
+                    actionText = "Hapus"
+                ) {
+                    delete()
+                }
             }
         }
     }
 
-    private fun validate(): Boolean{
+    private fun validate(): Boolean {
         binding.apply {
-            if (txtNamecategory.isEmpty())return false
+            if (txtNamecategory.isEmpty()) return false
         }
         return true
     }
 
 
-    private fun addCategory(){
-        val myDb: AppDatabaseOld = AppDatabaseOld.getDatabase(this@AddCategoriesActivity)
-        val data = CategoryJava()
-        data.name = binding.txtNamecategory.text.toString()
+    private fun create() {
+        val request = CategoryRequest(
+            name = binding.txtNamecategory.getString()
+        )
+        viewModel.create(request).observe(this) {
+            when (it.state) {
+                State.SUCCESS -> {
+                    toastSuccess("Berhasil menambahkan category")
+                    finish()
+                }
 
-//        CompositeDisposable().add(Observable.fromCallable { myDb.categoryDao().insert(data) }
-//            .subscribeOn(Schedulers.computation())
-//            .subscribe {
-//                Log.d("respons", "data inserted")
-//            })
-    }
+                State.ERROR -> {
+                    toastError(it.message)
+                }
 
-    private fun setdataAdapter(){
-        binding.apply {
-            rvCategories.adapter = adapterCategory
+                State.LOADING -> {
+
+                }
+            }
         }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private fun setDataCategories(){
-        list.clear()
-        list.addAll(database.categoryDao().getAllCategories())
-        adapterCategory.notifyDataSetChanged()
+    private fun update() {
+        val request = CategoryRequest(
+            id = category?.id,
+            name = binding.txtNamecategory.getString()
+        )
+        viewModel.update(request).observe(this) {
+            when (it.state) {
+                State.SUCCESS -> {
+                    toastSuccess("Berhasil merubah category")
+                    finish()
+                }
+
+                State.ERROR -> {
+                    toastError(it.message)
+                }
+
+                State.LOADING -> {
+
+                }
+            }
+        }
+    }
+
+    private fun delete() {
+        viewModel.delete(category ?: CategoryEntity()).observe(this) {
+            when (it.state) {
+                State.SUCCESS -> {
+                    toastSuccess("Berhasil menghapus category")
+                    finish()
+                }
+
+                State.ERROR -> {
+                    toastError(it.message)
+                }
+
+                State.LOADING -> {
+
+                }
+            }
+        }
     }
 }
 

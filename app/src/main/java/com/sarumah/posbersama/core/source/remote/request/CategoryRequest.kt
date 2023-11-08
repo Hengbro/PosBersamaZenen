@@ -7,5 +7,6 @@ package com.sarumah.posbersama.core.source.remote.request
 class CategoryRequest(
     var id: Int? = null,
     var name: String? = null,
-    var image: String? = null
+    var image: String? = null,
+    var deskripsi: String? = null,
 )

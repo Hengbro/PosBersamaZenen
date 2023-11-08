@@ -1,7 +1,7 @@
 package com.sarumah.posbersama.core.di
 
 import com.sarumah.posbersama.ui.auth.AuthViewModel
-import com.sarumah.posbersama.ui.category.CategoryViewModel
+import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.CategoryViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
