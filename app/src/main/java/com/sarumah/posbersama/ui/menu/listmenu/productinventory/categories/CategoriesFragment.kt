@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.toastWarning
 import com.sarumah.posbersama.databinding.FragmentCategoriesBinding
-import com.sarumah.posbersama.ui.category.CreateCategoriesActivity
 import com.sarumah.posbersama.ui.menu.listmenu.productinventory.categories.adapter.CategoryAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,7 +16,7 @@ class CategoriesFragment : Fragment() {
     private val viewModel: CategoryViewModel by viewModel()
     private val adapter = CategoryAdapter(
         onClick = {
-            intentActivity(CreateCategoriesActivity::class.java, it)
+            intentActivity(AddCategoriesActivity::class.java, it)
         }, onDelete = {
             toastWarning("onDelete:" + it.name)
         }
@@ -45,7 +44,7 @@ class CategoriesFragment : Fragment() {
     private fun mainButton() {
         binding.apply {
             btnAddnewcategories.setOnClickListener {
-                intentActivity(CreateCategoriesActivity::class.java)
+                intentActivity(AddCategoriesActivity::class.java)
             }
         }
     }

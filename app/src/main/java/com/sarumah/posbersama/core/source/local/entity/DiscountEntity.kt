@@ -15,8 +15,8 @@ data class DiscountEntity (
     var clientId: Int = 0,
     var storeId: Int = 0,
     var name : String? = null,
-    var type : Int,
-    var discount : Int,
-    var maxDiscount : Int,
+    var type : String? = null,
+    var discount : String? = null,
+    var maxDiscount : String? = null,
 
 ): Parcelable

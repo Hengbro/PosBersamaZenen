@@ -1,8 +1,10 @@
 package com.sarumah.posbersama.core.source.remote.network
 
 import com.sarumah.posbersama.core.source.local.entity.CategoryEntity
+import com.sarumah.posbersama.core.source.local.entity.DiscountEntity
 import com.sarumah.posbersama.core.source.model.User
 import com.sarumah.posbersama.core.source.remote.request.CategoryRequest
+import com.sarumah.posbersama.core.source.remote.request.DiscountRequest
 import com.sarumah.posbersama.core.source.remote.request.LoginRequest
 import com.sarumah.posbersama.core.source.remote.response.base.DataResponse
 import com.sarumah.posbersama.core.source.remote.response.base.ListResponse
@@ -35,5 +37,19 @@ interface ApiService {
     suspend fun deleteCategory(
         @Path("id") id: Int?
     ): Response<DataResponse<CategoryEntity>>
+
+    @GET("discount")
+    suspend fun getDiscount(): Response<ListResponse<DiscountEntity>>
+
+    @POST("discount")
+    suspend fun createDiscountfix(
+        @Body data: DiscountRequest
+    ): Response<DataResponse<DiscountEntity>>
+
+    @POST("discount")
+    suspend fun createDiscountpersent(
+        @Body data: DiscountRequest
+    ): Response<DataResponse<DiscountEntity>>
+
 
 }
